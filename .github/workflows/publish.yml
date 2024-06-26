@@ -20,13 +20,13 @@ jobs:
 
       - name: Remove existing Docker image
         run: |
-          docker rmi ${{ secrets.DOCKER_USERNAME }}/test:test || true
+          docker rmi todoroff318/test:test || true
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/test:latest
+          tags: todoroff318/test:test
           context: .
           file: ./Dockerfile
 
